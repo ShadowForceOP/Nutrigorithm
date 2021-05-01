@@ -43,7 +43,7 @@ void main() => runApp(const MyApp());
 
 /// This is the main application widget.
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   static const String _title = 'Flutter Code Sample';
 
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
 
 /// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+  const MyStatefulWidget({Key key}) : super(key: key);
 
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
@@ -69,11 +69,11 @@ String text = 'Not calculated yet';
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _fbmr = 0;
-  late TextEditingController controller;
-  late TextEditingController controller2;
-  late TextEditingController controller3;
-  late TextEditingController controller4;
-  late TextEditingController controller5;
+  TextEditingController controller;
+  TextEditingController controller2;
+  TextEditingController controller3;
+  TextEditingController controller4;
+  TextEditingController controller5;
   @override
   void initState() {
     super.initState();
