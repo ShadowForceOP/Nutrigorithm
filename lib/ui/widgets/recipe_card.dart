@@ -17,13 +17,12 @@ class RecipeCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              recipe.name,
+                recipe.name, style: TextStyle(fontSize: 16.0,)
             ),
             // Empty space:
             SizedBox(height: 10.0),
             Row(
               children: [
-                Icon(Icons.timer, size: 20.0),
                 SizedBox(width: 5.0)
               ],
             ),
@@ -31,6 +30,33 @@ class RecipeCard extends StatelessWidget {
         ),
       );
     }
-    return _buildTitleSection();
+    return GestureDetector(
+      onTap: () => print("Tapped!"),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+        child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              // We overlap the image and the button by
+              // creating a Stack object:
+              Stack(
+                children: <Widget>[
+                  AspectRatio(
+                    aspectRatio: 16.0 / 9.0,
+                    child: Image.network(
+                      recipe.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              ),
+              _buildTitleSection(),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
